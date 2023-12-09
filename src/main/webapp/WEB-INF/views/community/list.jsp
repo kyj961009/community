@@ -51,16 +51,17 @@
 </head>
 <body>
 
-    <h1><a href="list">${boardVO.title}</a></h1>
-    <img src="images/log.jpg" class="logo">
+    <h1><a href="list">Community</a></h1>
+
     <table border="1">
         <thead>
             <tr>
-                <th>ID</th>
-                <th>Title</th>
-                <th>Writer</th>
-                <th>Date</th>
-                <th>Last Updated</th>
+                <th>번호</th>
+                <th>제목</th>
+                <th>작성자</th>
+                <th>날짜</th>
+                <th>최근 수정일</th>
+                <th>조회수</th>
             </tr>
         </thead>
         <tbody>
@@ -71,6 +72,7 @@
                 <td>${boardVO.writer}</td>
                 <td>${boardVO.regdate}</td>
                 <td>${boardVO.updatedate}</td>
+                <td id="views">${boardVO.boardHit}</td>
             </tr>
 </c:forEach>
         </tbody>

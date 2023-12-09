@@ -2,6 +2,7 @@ package com.example.community.service;
 
 import com.example.community.domain.BoardVO;
 import com.example.community.domain.Criteria;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -10,7 +11,8 @@ public interface BoardService {
     void register(BoardVO boardVO);
 
     // READ
-    BoardVO get(Long id);
+    BoardVO read(Long id) throws Exception;
+
 
     // UPDATE
     boolean update(BoardVO boardVO);
@@ -25,4 +27,6 @@ public interface BoardService {
 
     // 전체 게시물 개수 조회
     long getTotal(Criteria criteria);
+
+
 }

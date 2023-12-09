@@ -25,20 +25,23 @@ repositories {
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-actuator'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
-	implementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter:3.0.3'
+	developmentOnly 'org.springframework.boot:spring-boot-devtools'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 
 	annotationProcessor 'org.projectlombok:lombok'
 	compileOnly 'org.projectlombok:lombok'
 	testCompileOnly 'org.projectlombok:lombok'
 	testAnnotationProcessor 'org.projectlombok:lombok'
 
-	developmentOnly 'org.springframework.boot:spring-boot-devtools'
+	implementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter:3.0.3'
 	runtimeOnly 'com.h2database:h2:2.2.224'
 	implementation 'org.bgee.log4jdbc-log4j2:log4jdbc-log4j2-jdbc4.1:1.16'
-	providedRuntime 'org.springframework.boot:spring-boot-starter-tomcat'
-	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testImplementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter-test:3.0.3'
+
+
 	implementation 'org.glassfish.web:jakarta.servlet.jsp.jstl:2.0.0'
+
+	providedRuntime 'org.springframework.boot:spring-boot-starter-tomcat'
 	implementation 'org.apache.tomcat.embed:tomcat-embed-jasper'
 }
 

@@ -7,6 +7,8 @@ import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Isolation;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -24,12 +26,15 @@ public class BoardServiceImpl implements BoardService {
         mapper.createSelectKey(boardVO);
     }
 
+
     @Override
-    public BoardVO get(Long id) {
+    public BoardVO read(Long id) throws Exception {
         log.info("id = {}", id);
 
+        mapper.boardHit(id);
         return mapper.read(id);
     }
+
 
     @Override
     public boolean update(BoardVO boardVO) {
@@ -62,4 +67,5 @@ public class BoardServiceImpl implements BoardService {
 
         return mapper.getTotal(criteria);
     }
+
 }

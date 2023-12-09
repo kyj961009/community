@@ -56,10 +56,10 @@ public class BoardController {
     }
 
     @GetMapping("/update")
-    public String update(@RequestParam Long id, Criteria criteria, Model model) {
+    public String update(@RequestParam Long id, Criteria criteria, Model model) throws Exception {
         log.info("update = {}", id);
 
-        model.addAttribute("board", boardService.get(id));
+        model.addAttribute("board", boardService.read(id));
 
         return "/community/write";
     }
@@ -78,10 +78,10 @@ public class BoardController {
     }
 
     @GetMapping("/read")
-    public BoardVO read(@RequestParam Long id, Criteria criteria) {
+    public BoardVO read(@RequestParam Long id, Criteria criteria) throws Exception {
         log.info("read = {}", id);
 
-        return boardService.get(id);
+        return boardService.read(id);
     }
 
     @RequestMapping("/delete")

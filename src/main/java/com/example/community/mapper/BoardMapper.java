@@ -33,5 +33,6 @@ public interface BoardMapper {
     // 전체 게시물의 개수를 조회
     long getTotal(Criteria criteria);
 
-
+    // 게시판 조회수
+    long boardHit(Long id) throws Exception;
 }
